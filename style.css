@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    background: #151c30;
+    position: relative;
+    font-family: roboto, sans-serif;
+}
+
+.navbar{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 4%;
+    background: #151c30;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+}
+
+.disney-logo{
+    height: 85px;
+}
+
+.navegacion{
+    margin-top: 10px;
+    display: flex;
+    list-style: none;
+}
+
+.items a{
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 50px;
+    text-transform: capitalize;
+    color: #fff;
+    opacity: 0.9;
+}
+
+.link{
+    text-decoration: none;
+    color: inherit;
+    padding: 10px;
+    position: relative;
+}
+
+.link:after{
+    content: "";
+    width: 0;
+    height: 4px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transition: all .5s;
+    will-change: width;
+}
+
+.link:hover:after{
+    width: 100%;
+    right: 0;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-left: 350px;
+    justify-content: flex-end;
+}
+  
+.perfil img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+  
+.name-perfil {
+    font-size: 16px;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .navegacion {
+      display: none;
+    }
+  
+    .perfil {
+      display: none;
+    }
+    .navbar{
+        justify-content: center;
+    }
+}
+
+.contenedor-carrusel{
+    position: relative;
+    width: 100%;
+    height: 450px;
+    padding: 20px 0;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.carrusel{
+    display: flex;
+    width: 92%;
+    height: 100%;-
+    position: relative;
+    margin: auto;
+    background: #000;
+}
+
+.slider{
+    flex: 0 0 auto;
+    margin-right: 30px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    transition: 0.9s;
+    overflow: hidden;
+}
+
+.slider img{
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+}
+
+.contenido-slider{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+    background: linear-gradient(to rigth, #030b17 80%, #0c111b00);
+    color: #fff;
+}
+
+
+@media (max-width: 768px) {
+    .contenedor-carrusel {
+      height: 300px;
+      margin-top: 60px;
+    }
+  
+    .carrusel {
+      flex-wrap: nowrap;
+      overflow-x: hidden; /* Ocultamos las barras de desplazamiento en dispositivos móviles */
+      scroll-snap-type: none;
+    }
+  
+    .slider {
+      flex: 0 0 calc(100% - 10px);
+      margin-right: 10px;
+    }
+  
+    .contenido-slider {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      padding: 20px;
+    }
+}
+
+.video-card-container{
+    position: relative;
+    width: 92%;
+    margin: auto;
+    height: 10vw;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.video-card{
+    position: relative;
+    min-width: calc(100%/5 - 10px);
+    width: calc(100%/5 - 10px);
+    height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #030b17;
+}
+
+.video-card-image, .card-video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-video{ 
+    position: absolute;
+}
+
+.video-card:hover .video-card-image{
+    display: none;
+}
+
+.title{
+    color: #fff;
+    opacity: 0.9;
+    padding-left: 4%;
+    text-transform: capitalize;
+    font-size: 22px;
+}
+
+.peliculas{
+    width: 100%;
+    height: 220px;
+    position: relative;
+    margin: 10px 0 20px;
+}
+
+.card-conainer{
+    position: absolute;
+    width: 92%;
+    padding-left: 10px;
+    height: 220px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+}
+
+.card-conainer::-webkit-scrollbar{
+    display: none;
+}
+
+.card{
+    position: relative;
+    min-width: 150px;
+    width: 500px;
+    height: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left: 80px;
+    margin-right: 0px;
+    transition: .5s;
+    cursor: pointer;
+    grid-template-columns: auto;
+}
+
+.card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.peliculas{
+    display: inline-block;
+}
+
+.card:hover{
+    transform: scale(1.1);
+    border-radius: 5px;
+    background: #fff;
+}
+
